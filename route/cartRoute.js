@@ -17,7 +17,7 @@ cartRouter.post("/create",async(req,res)=>{
        res.send({"msg":"done"})
     } catch (error) {
         console.log(error);
-        res.send({"msg":"error"});
+        res.send({"msg":error});
     }
 })
 
