@@ -17,7 +17,7 @@ cartRouter.post("/create",async(req,res)=>{
        res.send({"msg":"done"})
     } catch (error) {
         console.log(error);
-        res.send({"msg":error});
+        res.send({"msg":"error","e":error});
     }
 })
 
@@ -26,7 +26,7 @@ cartRouter.get("/all",async(req,res)=>{
         let data=await cartModel.find({userID:req.body.userID});
         res.send(data);
     } catch (error) {
-        res.send({"msg":"error"});
+        res.send({"msg":"error","e":error});
     }
 })
 cartRouter.delete("/delete/:id",async(req,res)=>{
