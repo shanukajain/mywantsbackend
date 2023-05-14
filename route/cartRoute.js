@@ -45,6 +45,16 @@ cartRouter.delete("/delete/:id",async(req,res)=>{
         res.send({"msg":"error"});
     }
 })
+cartRouter.delete("/delete",async(req,res)=>{
+    try {
+       let id=req.body.userID
+        await cartModel.deleteMany({"UserID":id});
+        res.send({"msg":"done"});
+    } catch (error) {
+        console.log(error);
+        res.send({"msg":"error"});
+    }
+})
 module.exports={
     cartRouter
 }
