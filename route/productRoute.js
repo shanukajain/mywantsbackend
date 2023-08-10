@@ -12,7 +12,7 @@ ProdcutRouter.get("/search/",async(req,res)=>{
     try {
         // console.log(req.body);
         console.log(req.query);
-        let data=await ProductModel.find({name:{$regex:req.query.str ,$options:"$i"}});
+        let data=await ProductModel.find({name:{$regex:req.query.str }});
         res.send(data);
     } catch (error) {
         res.send(error);
